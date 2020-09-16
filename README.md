@@ -12,3 +12,7 @@ Then you can run this from anywhere by typing:
 ```
 my-script
 ```
+## Linting shell files
+
+A useful tool is **shellcheck** which lives in this repo https://github.com/koalaman/shellcheck
+If you install it locally on your laptop you will be able to use it for linting shell files on the go or by running `shellcheck my-script`
