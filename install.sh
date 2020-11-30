@@ -15,8 +15,12 @@ installHomeBrew(){
  }
 
 installNvm(){
+   if brew ls --versions nvm > /dev/null; then
+   echo "Nvm is already installed"
+   else
    echo "Installing nvm..."
    brew install nvm
+   fi
    source "$(brew --prefix nvm)/nvm.sh"
    mkdir -p ~/.nvm
    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
