@@ -15,11 +15,11 @@ installHomeBrew(){
  }
 
 installNvm(){
-   if brew ls --versions nvm > /dev/null; then
-   echo "Nvm is already installed"
+   if ! [ -x "$(command -v nvm)" ]; then
+      echo "Nvm is already installed"
    else
-   echo "Installing nvm..."
-   brew install nvm
+      echo "Installing nvm..."
+      brew install nvm
    fi
    source "$(brew --prefix nvm)/nvm.sh"
    mkdir -p ~/.nvm
